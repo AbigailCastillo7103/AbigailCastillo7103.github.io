@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Compra</title>
+    <link rel="stylesheet" type="text/css" href="styleform.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">
+        function validarFormulario() {
+            var nombre = document.getElementById('campo1');
+            var email = document.getElementById('campo2');
+            var genero = document.getElementsByName('sexo');
+            var direccion = document.getElementById('campo5');
+            var tarjeta = document.getElementById('campo8');
+            var ciudad = document.getElementById ('campo6')
+            var codigo = document.getElementById ('campo7')
+
+            // Verifica si al menos un género está seleccionado
+            var generoSeleccionado = false;
+            for (var i = 0; i < genero.length; i++) {
+                if (genero[i].checked) {
+                    generoSeleccionado = true;
+                    break;
+                }
+            }
+
+            if (nombre.value === "" || email.value === "@gmail.com" || !generoSeleccionado || direccion.value === "" || tarjeta.value === "" || ciudad.value === "" || codigo.value === "") {
+                alert("Hay campos que aún no has llenado. Por favor complétalos para continuar.");
+                return false;
+            } else {
+                window.location.href = "index.html";
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <header class="container-fluid">
+        <div class="row">
+          <div class="col-12 logo">
+            <img src="./imagenes/logo.jpg" class="img-fluid" />
+          </div>
+        </div>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item">
+                  <a 
+                  class="nav-link" 
+                  href="index.html">Inicio</a>
+                </li>
+          <ul class="nav">
+            <li class="nav-item">
+              <a 
+              class="nav-link" 
+              href="quienesomos.html">¿Quiénes somos?</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="mujeres.html"
+                >Mujeres</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="hombres.html"
+                >Hombres</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="packregalo.html"
+                >Paquetes de regalo</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="promociones.html"
+                >Promociones</a
+              >
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="carrito.html">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="Carrito de compras">
+                </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    
+
+    <h1>Por favor ingrese los siguientes datos para continuar con la compra</h1>
+    <form name="forma01" action="mujeres.html" method="POST">
+        <h2>Detalles de envío</h2>
+        <label>
+            <br> <br>
+            <input id="campo1" type="text" name="nombre" placeholder="Escribe tu nombre" required>
+        </label>
+
+        <label></label>
+        <input id="campo2" type="email" name="correo" value="@gmail.com" >
+        <br>
+
+        <label for="sexo">Seleccione una opción</label>
+        <input id="campo3" type="radio" name="sexo" value="Femenino">Femenino
+        <input id="campo3" type="radio" name="sexo" value="Masculino">Masculino
+        <input id="campo3" type="radio" name="sexo" value="Otro">Otra preferencia
+        <br>
+
+        <label for="comentario"></label><br>
+        <input type="text"  id="campo5" name="comentario" cols="30" rows="5"  placeholder="Escribe tu Direccion aqui"></input>
+       
+       
+        <label for="ciudadCodigoPostal">
+            <input type="text" id="campo6" name="ciudad" placeholder="Ciudad" >
+            <input type="text" id="campo7" name="codigo_postal" placeholder="Código postal" >
+        </label>
+    
+        <label></label>
+        <input id="campo8" type="number" name="tarjeta" value="" placeholder=" Digita tu numero de tarjeta aquí">
+
+
+        <button type="button" onclick="validarFormulario()">Continuar</button>
+    </form>
+</body>
+</html>

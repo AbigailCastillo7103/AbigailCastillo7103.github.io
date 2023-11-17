@@ -1,0 +1,20 @@
+.product {
+    display: flex;
+    align-items: center;
+}
+
+.product-image {
+    margin-right: 100px; /* Ajusta el margen derecho según tu preferencia */
+    flex: 1; /* Para que la imagen tome todo el espacio disponible */
+    padding: 30px;
+}
+
+.product-details {
+    width: 70%; /* Ajusta el ancho de los detalles según tu preferencia */
+}
+button{  /*Diseño del boton*/
+    font-size: 15px;
+    background-color: #725c3b;
+    color: #fff;
+    padding: 10px; /*Espacio*/
+  }

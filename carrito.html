@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Carrito de Compras</h1>
+    <ul id="carrito">
+        <!-- Los elementos seleccionados se agregarán aquí -->
+    </ul>
+    <button onclick="continuarCompra()">Continuar con la compra</button>
+
+    <script>
+        // Función para agregar elementos al carrito
+        function agregarAlCarrito(item) {
+            var carrito = document.getElementById('carrito');
+            var listItem = document.createElement('li');
+            listItem.textContent = item;
+            carrito.appendChild(listItem);
+        }
+
+        // Función para continuar con la compra
+        function continuarCompra() {
+            window.location.href = "formulario.html"; // Enlazar al formulario de compra
+        }
+    </script>
+</body>
+</html>
